@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+.social_list {
+    display: flex;
+    list-style: none;
+}
+
+.social_list li {
+    margin-right: .5em;
+}
+
+.social_list a {
+    font-size: 1.2em;
+    color: #000;
+    transition: 0.5s;
+}
+
+.social_list a:hover {
+    color: #555231;
+}
+
+.copy_right span {
+    font-weight: 500;
+}

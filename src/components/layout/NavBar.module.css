@@ -1,0 +1,20 @@
+.nav {
+    padding: 2em;
+    background-color: #555231;
+    color: #e9db9c;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.list li {
+    font-weight: 600;
+}
+
+.list span {
+    font-size: 2em;
+}

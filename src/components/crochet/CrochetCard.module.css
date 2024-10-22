@@ -1,0 +1,31 @@
+.card {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+    width: 60%
+}
+
+.card img{
+    border-radius:5%;
+    width: 400px;
+    height: 400px;
+}
+
+.info h2,
+.info p {
+    margin-bottom: 1.5em;
+}
+
+.info p {
+    color: #787878;
+    font-size: .9em;
+}
+
+.info button {
+    font-weight: 600;
+    color: #787878;
+    cursor: pointer;
+    border: solid 2px #7d7d7d78;
+    background-color: transparent;
+    padding: .5em 2em;
+}
