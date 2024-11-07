@@ -3,6 +3,8 @@
     flex-direction: column;
     align-items: center;
     padding: 1em;
+    background-color: #DDD1C6;
+    color: #9B9389;
 }
 
 .social_list {
@@ -16,7 +18,7 @@
 
 .social_list a {
     font-size: 1.2em;
-    color: #000;
+    color: #9B9389;
     transition: 0.5s;
 }
 
