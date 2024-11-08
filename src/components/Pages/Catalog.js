@@ -13,6 +13,7 @@ const Catalog = () => {
           name="Jogo de tapete"
           description="Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias."
           metrics="12x15"
+          valor="120"
         />
         <CrochetCard
           img="https://img.elo7.com.br/product/685x685/1AED57B/tapete-redondo-branco-e-preto-1-m-tapete-de-barbante.jpg"
@@ -21,6 +22,7 @@ const Catalog = () => {
           name="Jogo de tapete"
           description=" Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias."
           metrics="12x15"
+          valor="200"
         />
         <CrochetCard
           img="https://down-br.img.susercontent.com/file/br-11134207-7r98o-ltu0tkzz8jl5a6.webp"
@@ -29,6 +31,7 @@ const Catalog = () => {
           name="Jogo de tapete"
           description="Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias."
           metrics="12x15"
+          valor="180"
         />
       </div>
     );

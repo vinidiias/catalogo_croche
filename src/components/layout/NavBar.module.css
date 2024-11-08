@@ -40,7 +40,6 @@
 .nav {
     padding: 2em;
     background-color: #181818;
-    color: #fff;
 }
 
 .list {
@@ -62,6 +61,11 @@
     font-weight: 600;
 }
 
-.list span {
+.list li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.list li span{
     font-size: 2em;
 }

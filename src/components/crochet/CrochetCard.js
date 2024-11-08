@@ -4,7 +4,7 @@ import styles from './CrochetCard.module.css'
 import { inView, useInView } from 'framer-motion'
 import { useEffect } from 'react'
 
-const CrochetCard = ({img, name, description, metrics, Backgroundcolor, colorFont }) => {
+const CrochetCard = ({img, name, description, metrics, Backgroundcolor, colorFont, valor }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
 
@@ -38,6 +38,7 @@ const CrochetCard = ({img, name, description, metrics, Backgroundcolor, colorFon
           <h2 style={{color: `${colorFont}`}} >{name}</h2>
           <p style={{color: `${colorFont}`}} >{description}</p>
           <p style={{color: `${colorFont}`}} >Métricas: {metrics}</p>
+          <p style={{color: `${colorFont}`}} >R$ {valor}</p>
           <button style={{color: `${colorFont}`}} >Comprar</button>
         </div>
       </div>
