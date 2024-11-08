@@ -4,35 +4,30 @@ import styles from './Catalog.module.css'
 import { useInView } from 'framer-motion';
 
 const Catalog = () => {
-  const container = useRef(null)
-  const ref = useRef(null)
-  const isInView = useInView({ root: container })
-
     return (
-      <div ref={container} style={{overflow: 'scroll'}} className={styles.catalog}>
+      <div className={styles.catalog}>
         <CrochetCard
-          view={ref}
           Backgroundcolor="#303030"
           colorFont="white"
           img="https://www.dicasdemulher.com.br/wp-content/uploads/2018/11/sousplat-de-croche-69.jpg"
           name="Jogo de tapete"
-          description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias."
+          description="Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias."
           metrics="12x15"
         />
         <CrochetCard
-          view={ref}
-          img="https://www.dicasdemulher.com.br/wp-content/uploads/2018/11/sousplat-de-croche-69.jpg"
-          colorFont="white"
+          img="https://img.elo7.com.br/product/685x685/1AED57B/tapete-redondo-branco-e-preto-1-m-tapete-de-barbante.jpg"
+          Backgroundcolor="#CCCBCB"
+          colorFont="#3d3d3d"
           name="Jogo de tapete"
-          description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias."
+          description=" Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias."
           metrics="12x15"
         />
         <CrochetCard
-          view={ref}
-          img="https://www.dicasdemulher.com.br/wp-content/uploads/2018/11/sousplat-de-croche-69.jpg"
+          img="https://down-br.img.susercontent.com/file/br-11134207-7r98o-ltu0tkzz8jl5a6.webp"
+          Backgroundcolor="#3C3C3C"
           colorFont="white"
           name="Jogo de tapete"
-          description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias."
+          description="Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus impedit aut itaque unde eius molestias obcaecati est quos quo. Totam perspiciatis repellat rem. Quasi iusto ea animi soluta odit molestias."
           metrics="12x15"
         />
       </div>
