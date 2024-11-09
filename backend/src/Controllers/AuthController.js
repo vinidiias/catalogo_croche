@@ -5,6 +5,7 @@ module.exports = {
     async auth(req, res) {
         const { token } = req.body
         const secretKey = process.env.SECRET_KEY
+        
         //console.log(secretKey)
         
         try{
