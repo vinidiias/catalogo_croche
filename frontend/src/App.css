@@ -1,0 +1,9 @@
+.app {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    min-height: 75%;
+    margin: 0 auto;
+
+}

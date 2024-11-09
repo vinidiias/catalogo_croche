@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@media (max-width: 1300px) {
+    .nav .list li {
+        font-size: 1.3em;
+    }
+    .nav .list span {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 911px) {
+    .nav .list li {
+        font-size: 1.1em;
+    }
+    .nav .list span {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 420px) {
+    .nav .list li {
+        font-size: .9em;
+    }
+    .nav .list span {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 330px) {
+    .nav .list li {
+        font-size: .7em;
+    }
+    .nav .list span {
+        font-size: 1.2em;
+    }
+}
+
+.nav {
+    padding: 2em;
+    background-color: #181818;
+}
+
+.list {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.list li,
+.list span {
+    font-family: 'Montserrat';
+}
+
+.list li {
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.list li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.list li span{
+    font-size: 2em;
+}

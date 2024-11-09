@@ -1,0 +1,24 @@
+.form_container {
+    margin: auto;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.form label {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.form input {
+    padding: .3em 1em;
+}
+
+.form button {
+    padding: .2em .8em;
+}
