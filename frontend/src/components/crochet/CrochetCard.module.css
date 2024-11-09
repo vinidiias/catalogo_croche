@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@media (max-width: 1300px) {
+    .card .photos img {
+        width: 250px;
+        height: 250px;
+    }
+    .card .info h2 {
+        font-size: 1.5em;
+    }
+    .card .info p {
+        font-size: .9em;
+    }
+    .card .info button {
+        font-size: .8em;
+    }
+}
+
+@media (max-width: 911px) {
+    .card .photos img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 805px) {
+    .card {
+        flex-direction: column;
+        row-gap: 2em;
+    }
+
+    .card .photos img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .card .info {
+        width: 100%;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 330px) {
+
+    .card .photos img {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .card .info {
+        width: 100%;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card .info h2 {
+        font-size: 1.4em;
+    }
+    .card .info p {
+        font-size: .8em;
+    }
+    .card .info button {
+        font-size: .8em;
+    }
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    padding: 3em;
+    column-gap: 40px;
+    width: 100%;
+    background-color: #414A3E;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.card img{
+    width: 300px;
+    height: 300px;
+}
+
+.info {
+    width: 50%;
+}
+
+.info h2 {
+    font-size: 2em;
+    color: #3d3d3d;
+    font-family: 'Montserrat';
+}
+
+.info h2,
+.info p {
+    margin-bottom: 1.5em;
+}
+
+.info p {
+    line-height: 1.5em;
+    color: #787878;
+    font-size: 1.1em;
+}
+
+.info button {
+    font-size: 1em;
+    font-weight: 600;
+    color: #787878;
+    cursor: pointer;
+    border: solid 2px #7d7d7d78;
+    background-color: transparent;
+    padding: .5em 2em;
+}
