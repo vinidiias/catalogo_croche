@@ -24,5 +24,14 @@ module.exports = {
         }catch(err) {
             return res.status(400).send(err)
         }
+    },
+    async indexAll(req, res) {
+        try{
+            const allCrochets = await Crochet.find()
+
+            return res.status(200).send(allCrochets)
+        } catch(err) {
+            return res.status(400).send(err)
+        }
     }
 }

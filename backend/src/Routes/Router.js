@@ -8,7 +8,8 @@ routes.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-routes.get('/create', CrochetController.create)
+routes.post('/create', CrochetController.create)
+routes.get('/crochets', CrochetController.indexAll)
 routes.post('/session', AuthController.auth)
 
 module.exports = routes

@@ -1,10 +1,8 @@
 import { useRef } from 'react'
-import Container from '../layout/Container'
 import styles from './CrochetCard.module.css'
-import { inView, useInView } from 'framer-motion'
-import { useEffect } from 'react'
+import { useInView } from 'framer-motion'
 
-const CrochetCard = ({img, name, description, metrics, Backgroundcolor, colorFont, valor }) => {
+const CrochetCard = ({img1, img2, img3, img4, name, description, metrics, Backgroundcolor, colorFont, valor }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
 
@@ -22,10 +20,10 @@ const CrochetCard = ({img, name, description, metrics, Backgroundcolor, colorFon
           }}
           className={styles.photos}
         >
-          <img src={img} alt="name" />
-          <img src={img} alt="name" />
-          <img src={img} alt="name" />
-          <img src={img} alt="name" />
+          <img src={img1} alt="name" />
+          <img src={img2} alt="name" />
+          <img src={img3} alt="name" />
+          <img src={img4} alt="name" />
         </div>
         <div
           style={{
