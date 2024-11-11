@@ -97,7 +97,7 @@ const CreateCrochet = () => {
                 <>
                   <input
                     id="img"
-                    name="img"
+                    name="img1"
                     className={styles.file}
                     placeholder="teste"
                     type="file"
