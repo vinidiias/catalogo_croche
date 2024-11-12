@@ -59,8 +59,10 @@
 }
 
 .photos img {
-    width: 300px;
-    height: 300px;
+    width: 300px;            /* Define a largura do contêiner */
+  height: 200px;           /* Define a altura do contêiner */
+  object-fit: cover;       /* Faz a imagem cobrir todo o contêiner */
+  object-position: 50% 70%;
 }
 
 .photos span {
