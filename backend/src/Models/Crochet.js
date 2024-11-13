@@ -33,6 +33,14 @@ const crochetSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    backgroundColor: {
+        type: String,
+        require:true
+    },
+    color: {
+        type: String,
+        require: true
+    }
 })
 
 module.exports = mongoose.model('Crochet', crochetSchema)
