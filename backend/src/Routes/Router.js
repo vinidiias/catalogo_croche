@@ -10,6 +10,8 @@ routes.get('/', (req, res) => {
 
 routes.post('/create', CrochetController.create)
 
+routes.get('/crochets/:id', CrochetController.indexByCrochet)
+
 routes.get('/crochets', CrochetController.indexAll)
 
 routes.post('/session', AuthController.auth)
