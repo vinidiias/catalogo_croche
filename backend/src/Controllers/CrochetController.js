@@ -35,5 +35,18 @@ module.exports = {
         } catch(err) {
             return res.status(400).send(err)
         }
+    },
+    async indexByCrochet(req, res) {
+        const { id } = req.params
+
+        try{
+            const crochetExist = await Crochet.findById(id)
+
+            if(!crochetExist) return res.status(400).send('Crochê não encontrado.')
+            
+            return res.status(200).send(crochetExist)
+        }catch(err) {
+            res.status(400).send(err)
+        }
     }
 }
