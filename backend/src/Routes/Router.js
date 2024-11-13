@@ -11,7 +11,6 @@ routes.get('/', (req, res) => {
 routes.post('/create', CrochetController.create)
 
 routes.get('/crochets', CrochetController.indexAll)
-
 routes.post('/session', AuthController.auth)
 
 module.exports = routes
