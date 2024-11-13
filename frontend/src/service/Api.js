@@ -2,7 +2,7 @@ import axios from 'axios'
 
 //https://catalogo-croche-4s4o.vercel.app
 const api = axios.create({
-    baseURL: 'https://catalogo-croche-4s4o.vercel.app'
+    baseURL: 'http://localhost:3333'
 })
 
 export default api

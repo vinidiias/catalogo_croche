@@ -14,6 +14,7 @@ const CreateCrochet = () => {
   const [value, setValue] = useState('')
   const [backgroundColor, setBackgroundColor] = useState('')
   const [color, setColor] = useState('black')
+  const [showButton, setShowButton] = useState(false)
   
   const location = useLocation()
   const navigate = useNavigate()
@@ -24,31 +25,43 @@ const CreateCrochet = () => {
 
   },[token, navigate])
 
-  async function handleFileChange(e) {
-    const file = e.target.files[0]
+// Função para lidar com o envio de múltiplos arquivos
+async function uploadFiles(event) {
+  event.preventDefault(); // Evita o reload da página
 
-    const setters = {
-      img1: setImg1,
-      img2: setImg2,
-      img3: setImg3,
-      img4: setImg4
-    }
+  // Seleciona os arquivos de um input com `multiple`
+  const files = document.getElementById('imagem').files;
 
-    if(file){
-      const base64Img = await convertToBase64(file)
-      setters[e.target.name](base64Img)
-    }
+  if (files.length === 0) {
+      alert("Selecione pelo menos um arquivo.");
+      return;
   }
 
-  // Função para converter o arquivo de imagem em Base64
-  function convertToBase64(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
+  const formData = new FormData();
+  for (let i = 0; i < files.length && i < 4; i++) { // Limite de 4 arquivos
+      formData.append('imagem', files[i]);
   }
+
+  fetch("http://localhost:3333/file", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Erro no upload.");
+      }
+      return response.json(); // Retorna a resposta JSON
+    })
+    .then((data) => {
+      console.log("URLs das imagens:", data.urls); // Acessa o resultado da Promise
+      setImg1(data.urls[0])
+      setImg2(data.urls[1])
+      setImg3(data.urls[2])
+      setImg4(data.urls[3])
+      alert('Imagens carregadas com sucesso!')
+    })
+    .catch((error) => console.error("Erro:", error));
+}
 
   function verificateInput(inputs){
     for(const key in inputs) {
@@ -60,7 +73,6 @@ const CreateCrochet = () => {
   
   async function submitHandler(e) {
     e.preventDefault()
-
     const inputs = {
       img1,
       img2,
@@ -69,7 +81,9 @@ const CreateCrochet = () => {
       name,
       description,
       metrics,
-      value
+      value,
+      backgroundColor,
+      color
     }
 
     if(!verificateInput(inputs)) return alert('Campos incompletos, por favor digite todos!')
@@ -90,79 +104,24 @@ const CreateCrochet = () => {
       <div style={{backgroundColor: backgroundColor}} className={styles.form_container}>
         <form className={styles.form}>
           <div className={styles.photos}>
-            <label htmlFor="img">
+            <label htmlFor="imagem">
               {img1 ? (
                 <img src={img1} alt='foto-croche' />
               ) : (
                 <>
                   <input
-                    id="img"
-                    name="img1"
+                    id="imagem"
+                    name="imagem"
                     className={styles.file}
                     placeholder="teste"
                     type="file"
                     accept="image/png, image/jpeg"
                     required
-                    onChange={handleFileChange}
+                    multiple
+                    onClick={() => setShowButton(true)}
                   />
-                  <span>Selecionar</span>
-                </>
-              )}
-            </label>
-            <label htmlFor="img2">
-              {img2 ? (
-                <img src={img2} alt='foto-croche' />
-              ) : (
-                <>
-                  <input
-                    id="img2"
-                    name="img2"
-                    className={styles.file}
-                    placeholder="teste"
-                    type="file"
-                    accept="image/png, image/jpeg"
-                    required
-                    onChange={handleFileChange}
-                  />
-                  <span>Selecionar</span>
-                </>
-              )}
-            </label>
-            <label htmlFor="img3">
-              {img3 ? (
-                <img src={img3} alt='foto-croche' />
-              ) : (
-                <>
-                  <input
-                    id="img3"
-                    name="img3"
-                    className={styles.file}
-                    placeholder="teste"
-                    type="file"
-                    accept="image/png, image/jpeg"
-                    required
-                    onChange={handleFileChange}
-                  />
-                  <span>Selecionar</span>
-                </>
-              )}
-            </label>
-            <label htmlFor="img4">
-              {img4 ? (
-                <img src={img4} alt='foto-croche' />
-              ) : (
-                <>
-                  <input
-                    id="img4"
-                    name="img4"
-                    className={styles.file}
-                    placeholder="teste"
-                    type="file"
-                    accept="image/png, image/jpeg"
-                    required
-                    onChange={handleFileChange}
-                  />
-                  <span>Selecionar</span>
+                  <span>Selecionar 4 fotos</span>
+                  {showButton && (<button onClick={uploadFiles} >Enviar fotos</button>)}
                 </>
               )}
             </label>

@@ -26,15 +26,6 @@ const upload = multer({
     })
 })
 
-/*
-const upload = multer({
-    storage: multer.diskStorage({
-        destination: uploadsFolder,
-        filename: (req, file, callback) => callback(null, uuid() + path.extname(file.originalname))
-    })
-})
-*/
-
 const dbUri = process.env.DB_URI
 const app = express()
 const router = require('./Routes/Router')
@@ -48,9 +39,14 @@ mongoose.connect(dbUri, {dbName:'arte-croche'})
 app.use(cors())
 app.use(express.json({limit: '10mb'}))
 
-app.post('/file', upload.single('imagem'), (req,res) => {
-    console.log(req.file)
+app.post('/file', upload.array('imagem', 4), (req, res) => {
+    const urls = req.files.map(file => {
+        return `https://myphotoscroche.s3.us-east-2.amazonaws.com/${file.key}`;
+    });
+
+    res.json({urls})
 })
+
 app.use(router)
 
 app.listen(3333, () => {
