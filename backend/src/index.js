@@ -36,7 +36,20 @@ mongoose.connect(dbUri, {dbName:'arte-croche'})
     console.log('Connected to database')
 }) .catch((err) => console.log(err))
 
-app.use(cors())
+const allowedOrigins = ['http://localhost:3000', 'https://catalogo-croche.vercel.app'];
+app.use(cors({
+    origin: function (origin, callback) {
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'auth'],
+    credentials: true,
+}))
+
 app.use(express.json({limit: '10mb'}))
 
 app.post('/file', upload.array('imagem', 4), (req, res) => {
