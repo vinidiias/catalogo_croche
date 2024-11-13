@@ -42,7 +42,7 @@ async function uploadFiles(event) {
       formData.append('imagem', files[i]);
   }
 
-  fetch("http://localhost:3333/file", {
+  fetch("https://catalogo-croche-4s4o.vercel.app/file", {
     method: "POST",
     body: formData,
   })
