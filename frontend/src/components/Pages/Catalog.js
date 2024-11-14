@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'
 import CrochetCard from '../crochet/CrochetCard'
 import styles from './Catalog.module.css'
 import api from '../../service/Api';
+import Loading from '../layout/Loading';
 
 const Catalog = () => {
   const [crochets, setCrochets] = useState([]);
-  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchCrochets = async () => {
@@ -31,7 +30,7 @@ const Catalog = () => {
 
   return (
     <div className={styles.catalog}>
-{crochets.length > 0 ? 
+  {crochets.length > 0 ? 
         (<>
         {crochets.map((crochet) => (
           <CrochetCard
@@ -50,7 +49,7 @@ const Catalog = () => {
             submitHandler={buyHandler}
           />
         ))}
-        </>) : (<p className={styles.nothing}>Sem crochês cadastrados</p>)} 
+        </>) : (<Loading />)} 
     </div>
   );
 }
