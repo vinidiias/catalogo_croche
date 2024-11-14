@@ -9,7 +9,7 @@ const CrochetCard = ({id, img1, img2, img3, img4, name, description, metrics, Ba
   const submit = (e) => {
     e.preventDefault()
 
-    submitHandler(id)
+    submitHandler(id, name)
   }
 
     return (
