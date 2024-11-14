@@ -21,8 +21,7 @@
       "src": "croche.ico",
       "type": "image/png",
       "sizes": "512x512"
-    },
-    
+    }
   ],
   "start_url": ".",
   "display": "standalone",
