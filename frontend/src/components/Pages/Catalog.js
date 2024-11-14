@@ -31,12 +31,12 @@ const Catalog = () => {
 
   const buyHandler = (id, name) => {
     //5545988231226
-    window.open(`https://wa.me/5545988231226?text=Olá tenho interesse no ${name} https://catalogo-croche.vercel.app/crochet/${id}`)
+    window.open(`https://wa.me/5545988231226?text=Olá tenho interesse no ${name} https://catalogo-croche.vercel.app/crochet/${id}`, '_blank')
   }
 
   return (
     <div className={`${styles.catalog} ${styles[center]}`}>
-  {crochets.length < 0 ? 
+  {crochets.length > 0 ? 
         (<>
         {crochets.map((crochet) => (
           <CrochetCard

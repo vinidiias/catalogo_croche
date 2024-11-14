@@ -1,7 +1,6 @@
 import { useRef } from 'react'
-import Container from '../layout/Container'
 import styles from '../crochet/CrochetCard.module.css'
-import { inView, useInView } from 'framer-motion'
+import { useInView } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import api from '../../service/Api'
