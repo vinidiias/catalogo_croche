@@ -6,6 +6,7 @@ import Loading from '../layout/Loading';
 
 const Catalog = () => {
   const [crochets, setCrochets] = useState([]);
+  const [center, setCenter] = useState('')
 
   useEffect(() => {
     const fetchCrochets = async () => {
@@ -21,6 +22,11 @@ const Catalog = () => {
     fetchCrochets();
   }, []);
 
+  useEffect(() => {
+    if(crochets.length > 0) setCenter('')
+    else setCenter('center')
+  }, [crochets.length, setCenter])
+
   console.log(crochets)
 
   const buyHandler = (id, name) => {
@@ -29,8 +35,8 @@ const Catalog = () => {
   }
 
   return (
-    <div className={styles.catalog}>
-  {crochets.length > 0 ? 
+    <div className={`${styles.catalog} ${styles[center]}`}>
+  {crochets.length < 0 ? 
         (<>
         {crochets.map((crochet) => (
           <CrochetCard

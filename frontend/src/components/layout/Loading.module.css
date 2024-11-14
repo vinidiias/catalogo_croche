@@ -1,3 +1,14 @@
 .loading {
+    width: 100%;
     background-color: transparent;
+}
+
+.loading img {
+    width: 200px;
+}
+
+@media(max-width: 500px) {
+    .loading img {
+        width: 100px;
+    }
 }
