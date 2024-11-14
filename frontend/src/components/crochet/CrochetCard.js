@@ -2,9 +2,15 @@ import { useRef } from 'react'
 import styles from './CrochetCard.module.css'
 import { useInView } from 'framer-motion'
 
-const CrochetCard = ({img1, img2, img3, img4, name, description, metrics, Backgroundcolor, colorFont, valor }) => {
+const CrochetCard = ({id, img1, img2, img3, img4, name, description, metrics, Backgroundcolor, colorFont, valor, submitHandler }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
+
+  const submit = (e) => {
+    e.preventDefault()
+
+    submitHandler(id)
+  }
 
     return (
       <div
@@ -37,7 +43,7 @@ const CrochetCard = ({img1, img2, img3, img4, name, description, metrics, Backgr
           <p style={{color: `${colorFont}`}} >{description}</p>
           <p style={{color: `${colorFont}`}} >Métricas: {metrics}</p>
           <p style={{color: `${colorFont}`}} >R$ {valor}</p>
-          <button style={{color: `${colorFont}`}} >Comprar</button>
+          <button style={{color: `${colorFont}`}} onClick={submit} >Comprar</button>
         </div>
       </div>
     );

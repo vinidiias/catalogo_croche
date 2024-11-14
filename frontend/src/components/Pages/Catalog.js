@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom'
 import CrochetCard from '../crochet/CrochetCard'
 import styles from './Catalog.module.css'
 import api from '../../service/Api';
 
 const Catalog = () => {
   const [crochets, setCrochets] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchCrochets = async () => {
@@ -20,26 +22,12 @@ const Catalog = () => {
     fetchCrochets();
   }, []);
 
-  /*
-{crochets.length > 0 ? 
-        (<>
-        {crochets.map((crochet) => (
-          <CrochetCard
-            key={crochet._id}
-            img1={crochet.img1}
-            img2={crochet.img2}
-            img3={crochet.img3}
-            img4={crochet.img4}
-            Backgroundcolor="#CCCBCB"
-            colorFont="#3d3d3d"
-            name={crochet.name}
-            description={crochet.description}
-            metrics={crochet.metrics}
-            valor={crochet.value}
-          />
-        ))}
-        </>) : (<p className={styles.nothing}>Sem crochês cadastrados</p>)} 
-  */
+  console.log(crochets)
+
+  const buyHandler = (id, name) => {
+    //5545988231226
+    window.open(`https://wa.me/5545988231226?text=Olá tenho interesse no ${name} htpps://catalogo-croche.vercel.app/crochet/${id}`)
+  }
 
   return (
     <div className={styles.catalog}>
@@ -47,6 +35,7 @@ const Catalog = () => {
         (<>
         {crochets.map((crochet) => (
           <CrochetCard
+            id={crochet._id}
             key={crochet._id}
             img1={crochet.img1}
             img2={crochet.img2}
@@ -58,6 +47,7 @@ const Catalog = () => {
             description={crochet.description}
             metrics={crochet.metrics}
             valor={crochet.value}
+            submitHandler={buyHandler}
           />
         ))}
         </>) : (<p className={styles.nothing}>Sem crochês cadastrados</p>)} 
