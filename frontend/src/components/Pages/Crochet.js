@@ -31,7 +31,7 @@ const Crochet = () => {
 
     return (
       <div
-        style={{ backgroundColor: `${crochets.Backgroundcolor}` }}
+        style={{ backgroundColor: `${crochets.backgroundColor}` }}
         className={styles.card}
         ref={ref}
       >
@@ -56,11 +56,11 @@ const Crochet = () => {
           }}
           className={styles.info}
         >
-          <h2 style={{color: `${crochets.colorFont}`}} >{crochets.name}</h2>
-          <p style={{color: `${crochets.colorFont}`}} >{crochets.description}</p>
-          <p style={{color: `${crochets.colorFont}`}} >Métricas: {crochets.metrics}</p>
-          <p style={{color: `${crochets.colorFont}`}} >R$ {crochets.value}</p>
-          <button style={{color: `${crochets.colorFont}`}} onClick={() => navigate('/')} >Voltar</button>
+          <h2 style={{color: `${crochets.color}`}} >{crochets.name}</h2>
+          <p style={{color: `${crochets.color}`}} >{crochets.description}</p>
+          <p style={{color: `${crochets.color}`}} >Métricas: {crochets.metrics}</p>
+          <p style={{color: `${crochets.color}`}} >R$ {crochets.value}</p>
+          <button style={{color: `${crochets.color}`}} onClick={() => navigate('/')} >Voltar</button>
         </div>
       </div>
     );
